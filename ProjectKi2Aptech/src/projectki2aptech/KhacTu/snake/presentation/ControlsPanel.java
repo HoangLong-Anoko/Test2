@@ -1,4 +1,4 @@
-package snake.presentation;
+package projectki2aptech.KhacTu.snake.presentation;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;

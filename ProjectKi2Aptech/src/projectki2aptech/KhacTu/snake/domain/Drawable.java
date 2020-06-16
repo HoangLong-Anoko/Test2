@@ -1,4 +1,4 @@
-package snake.domain;
+package projectki2aptech.KhacTu.snake.domain;
 
 import java.awt.Graphics2D;
 

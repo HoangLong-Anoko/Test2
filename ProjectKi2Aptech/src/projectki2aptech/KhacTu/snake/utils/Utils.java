@@ -1,4 +1,4 @@
-package snake.utils;
+package projectki2aptech.KhacTu.snake.utils;
 
 import java.awt.Image;
 import java.awt.Toolkit;

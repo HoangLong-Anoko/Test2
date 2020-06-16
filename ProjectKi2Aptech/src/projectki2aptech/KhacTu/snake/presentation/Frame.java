@@ -1,4 +1,4 @@
-package snake.presentation;
+package projectki2aptech.KhacTu.snake.presentation;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

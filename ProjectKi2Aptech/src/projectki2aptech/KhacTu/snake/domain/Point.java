@@ -1,4 +1,4 @@
-package snake.domain;
+package projectki2aptech.KhacTu.snake.domain;
 
 public class Point implements Cloneable {
 	private int x;

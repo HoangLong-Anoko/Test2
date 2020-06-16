@@ -1,4 +1,4 @@
-package snake.domain;
+package projectki2aptech.KhacTu.snake.domain;
 
 public abstract class Sprite implements Drawable {
 	protected int x;
