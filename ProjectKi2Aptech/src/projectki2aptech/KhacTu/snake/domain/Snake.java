@@ -47,8 +47,7 @@ public class Snake extends Sprite
 		}
 
 		if(i == body.size())
-			return false;
-					
+			return false;			
 		return true;
 	}
 	

@@ -14,6 +14,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.Timer;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  *
@@ -54,8 +59,8 @@ public class mainFrame extends javax.swing.JFrame implements KeyListener{
 
         jPanel1 = new javax.swing.JPanel();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Demo game of Yaosu");
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("hshshs");
         setResizable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -671,8 +676,15 @@ public class mainFrame extends javax.swing.JFrame implements KeyListener{
         splashScreen.start();
         birdDeadThread.start();
         stopGame = true;
-        JOptionPane.showMessageDialog(null, pointCount + " điểm.");
-        restartApplication();
+        WriteFile(System.getProperty("user.dir") + "\\src\\MainUIPackage\\Game (1).txt");
+        ReadFile(System.getProperty("user.dir") + "\\src\\MainUIPackage\\Game (1).txt");
+        int Option = JOptionPane.showConfirmDialog(null, "Restart Game?");
+        if( Option == 0){
+            restartApplication();
+        }    
+        else{
+            dispose();
+        }
     }
     
     public void restartApplication(){
@@ -680,6 +692,39 @@ public class mainFrame extends javax.swing.JFrame implements KeyListener{
         new mainFrame().setVisible(true);
         firstTime = true;
         
+    }
+    
+    public void ReadFile(String path){
+        try{
+            File Hifi = new File(path); 
+            Scanner myReader = new Scanner(Hifi);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println("diem: " + data);
+            }
+        }
+        catch(Exception ex){
+            System.out.println(ex);
+        }
+    }
+    
+    public void WriteFile(String path) {
+        try {
+            File Hifi = new File(path);
+            Scanner myReader = new Scanner(Hifi);
+            if (Hifi.createNewFile()) {
+                System.out.println("File created: " + Hifi.getName());
+            } 
+            else {
+                System.out.println("File already exists.");
+                FileWriter myWriter = new FileWriter(path);
+                myWriter.write(pointCount + "");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
     Random rd = new Random();

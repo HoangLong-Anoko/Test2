@@ -7,8 +7,10 @@ import java.awt.event.KeyListener;
 import java.awt.image.BufferedImage;
 import javax.swing.*;
 import java.io.File;
+import java.io.FileWriter;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Scanner;
 import javax.swing.JPanel;
 
 import javax.sound.sampled.AudioFormat;
@@ -237,6 +239,7 @@ public class MainPanel extends JPanel implements Runnable {
                 g2.drawString("GAME OVER", 240, this.getHeight() / 2);
                 g2.setFont(new Font("Verdana", Font.BOLD, 30));
                 g2.drawString("Hit Enter To Start", 300, this.getHeight() / 2 + 150);
+                WriteFile(System.getProperty("user.dir") + "\\src\\MainUIPackage\\Game (2).txt");
             }
         }
         g.drawImage(buffer, 0, 0, this);
@@ -351,5 +354,24 @@ public class MainPanel extends JPanel implements Runnable {
 
     public void setSquareSize(int squareSize) {
         this.squareSize = squareSize;
+    }
+    
+    public void WriteFile(String path) {
+        try {
+            File Hifi = new File(path);
+            Scanner myReader = new Scanner(Hifi);
+            if (Hifi.createNewFile()) {
+                System.out.println("File created: " + Hifi.getName());
+            } 
+            else {
+                System.out.println("File already exists.");
+                FileWriter myWriter = new FileWriter(path);
+                myWriter.write(Integer.parseInt(ControlsPanel.scoreLabel.getText()) + "");
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+            }
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 }

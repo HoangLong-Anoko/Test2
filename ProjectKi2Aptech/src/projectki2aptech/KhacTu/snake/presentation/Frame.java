@@ -14,7 +14,8 @@ public class Frame extends JFrame
 
 	public Frame()
 	{
-		getContentPane().add(controlsPanel, BorderLayout.SOUTH);
+            this.setDefaultCloseOperation(2);
+            getContentPane().add(controlsPanel, BorderLayout.SOUTH);
 		getContentPane().add(mainPanel, BorderLayout.CENTER);
 		pack();
 		Dimension d = Toolkit.getDefaultToolkit().getScreenSize();
@@ -27,10 +28,12 @@ public class Frame extends JFrame
 	}
 	
 	public ControlsPanel getControlsPanel() {
+            this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		return controlsPanel;
 	}
 
 	public MainPanel getMainPanel() {
+            this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		return mainPanel;
 	}
 }

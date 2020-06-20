@@ -43,7 +43,6 @@ public abstract class Sprite implements Drawable {
 				|| y + width < sprite.getY()
 				|| sprite.getY() + sprite.getHeight() < y)
 			return false;
-		
 		return true;
 	}
 }
