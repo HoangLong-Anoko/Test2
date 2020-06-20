@@ -671,7 +671,7 @@ public class mainFrame extends javax.swing.JFrame implements KeyListener{
         splashScreen.start();
         birdDeadThread.start();
         stopGame = true;
-        JOptionPane.showMessageDialog(null, "Thua mẹ r nhé!\n" + pointCount + " điểm.");
+        JOptionPane.showMessageDialog(null, pointCount + " điểm.");
         restartApplication();
     }
     
