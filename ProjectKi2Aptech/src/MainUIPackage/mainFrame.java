@@ -60,7 +60,7 @@ public class mainFrame extends javax.swing.JFrame implements KeyListener{
         jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("hshshs");
+        setTitle("Escaping Bird");
         setResizable(false);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
