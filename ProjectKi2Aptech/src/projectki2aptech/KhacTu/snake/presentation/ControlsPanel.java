@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import static javax.swing.WindowConstants.DISPOSE_ON_CLOSE;
 import javax.swing.border.BevelBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -17,13 +18,13 @@ public class ControlsPanel extends JPanel
 	private JSlider blocksSlider = new JSlider();
 	private JSlider speedSlider = new JSlider();
 	private JSlider sizeSlider = new JSlider();
-	private JLabel scoreLabel = new JLabel();
+	public static JLabel scoreLabel = new JLabel();
 	private JButton helpButton = new JButton();
 	private MainPanel panel;
 	
 	public ControlsPanel(final MainPanel panel)
-	{
-		this.panel = panel;
+	{	
+            this.panel = panel;
 		FlowLayout f = new FlowLayout();
 		f.setHgap(10);
 		this.setLayout(f);
@@ -131,7 +132,7 @@ public class ControlsPanel extends JPanel
 	}
 	
 	public JLabel getScoreLabel() {
-		return scoreLabel;
+            return scoreLabel;
 	}
 
 	public void disableControls()
